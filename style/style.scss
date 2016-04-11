@@ -1,0 +1,157 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html{font-size: 62.5%;}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  font-family:'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'Lucida Grande', 'Luxi Sans', Arial, sans-serif;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* From here */
+/* colors */
+$red1:#e81123;
+$red2:#da3b01;
+$yellow:#ffb900;
+$green1:#107c10;
+$green2:#5dc21e;
+$blue1:#0078d7;
+$blue2:#008272;
+$purple:#5c2e91;
+$pink:#b4009e;
+$gray1:#e3e3e3;
+$gray2:#c8c8c8;
+$gray3:#acacac;
+$gray4:#919191;
+$gray5:#767676;
+$gray6:#5e5e5e;
+$gray7:#464646;
+$gray8:#2f2f2f;
+$gray9:#171717;
+$b:#000;
+$w:#fff;
+
+
+/* 通用 */
+@mixin btn{
+  -webkit-appearance: button;
+  cursor: pointer;
+  min-width:120px;
+  max-width:374px;
+  padding:9px 12px 10px;
+}
+@mixin center{
+  display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+body{
+  background-color: $blue1;
+  height:800px;
+  @include center;
+}
+button{
+  border:1px solid transparent;
+  background-color: $gray8;
+  color: $w;
+  @include btn;
+}
+button:hover,
+button:focus,
+button:active {
+  border-color: $gray1;
+  outline: 0;}
+
+.modal{
+  background-color: rgba(227,227,227,.4);
+  z-index: 1;
+  position: fixed;
+  display: none;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+}
+.modal-content{
+  position: fixed;
+  display: none;
+  width: 60%;
+  //margin: 20% auto;
+  border: 1px solid $gray9;
+  z-index: 2;
+}
+.modal-header{
+  border-bottom: 1px solid $gray9;
+  background-color: $blue1;
+  color: $w;
+}
+.modal-body{
+  background-color: $gray2;
+}
+.modal-header,.modal-body{
+  padding: 8px 16px;
+  overflow: hidden;
+}
+.modal-button{
+  margin-top: 20px;
+  float: right;
+}
+.modal-button button{
+  border: 1px solid $gray9;
+  background-color: $blue1;
+  color: $w;
+  @include btn;
+}
+.close{
+  float: right;
+  color:$gray9;
+}
+.close:hover,
+.close:focus {
+  color: $gray7;
+  text-decoration: none;
+  cursor: pointer;
+}
